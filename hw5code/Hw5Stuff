@@ -1,0 +1,36 @@
+1------------------------------------
+(define find (lambda (n lst) (if (null? lst) (list) (append (list (list (findNumV2 n (car lst)))) (find n (cdr lst))))))
+
+(define findNumV2 (lambda (n lst) (if (null? lst) 0 (if (= (car lst) n) (+ (findNumV2 n (cdr lst)) 1) (findNumV2 n (cdr lst))))))
+
+(define append (lambda (lst1 lst2) (if (null? lst1) lst2 (if (null? lst2) lst1 (cons (car lst1) (append (cdr lst1) lst2))))))
+
+2------------------------------------
+(define append (lambda (lst1 lst2) (if (null? lst1) lst2 (if (null? lst2) lst1 (cons (car lst1) (append (cdr lst1) lst2))))))
+
+(define sort (lambda (lst) (if (isSorted((concat (lst)) 99999)) (concat(lst)) #f)))
+
+(define isSorted (lambda (lst n) (if (null? lst) #t (if (> (car lst) n) #f (isSorted(cdr lst) (car lst))))))
+
+(define concat (lambda (lst) (if (null? lst) (list) (append (car lst) (concat (cdr lst))))))
+
+
+
+(sort (list (list 4 3) (list 2 1)))
+(isSorted (list 8 7 6 5 4 3 2 1) 9999999)
+(concat (list (list 1 2) (list 3 4)))
+(= "abc" "abc")
+(= "abc" "abcdef")
+(> "abc" "abcdef")
+(= (list) (list))
+(= (list 3 5) (list 8 6 7 4))
+(= (cdr (list 1 2 3)) 1)
+(= (list 3 5) (list 3 5))
+(= (list 1 2 3) (list 1 2 3))
+(= (car (list 1 2 3)) 1)
+(> (list 1 2) (list))
+
+
+
+
+
